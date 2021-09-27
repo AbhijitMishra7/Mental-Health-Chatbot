@@ -82,17 +82,21 @@ for word, i in word_index.items():
         if embedding_vector is not None:        
             embedding_matrix[word] = embedding_vector
             hits+=1
-            list= closest_embeddings(embeddings_dict[word])[1:5] 
-            for wrd in list:
+            lst= closest_embeddings(embeddings_dict[word])[1:5] 
+            for wrd in lst:
                 embedding_vector = embeddings_dict.get(wrd)     
                 embedding_matrix[wrd] = embedding_vector
                 hits+=1
         print(hits)
 print("Converted %d words" % (hits))
 
-np.save('embedding_matrix.npy', embedding_matrix)
+import pickle 
+embed_mat=open('embed_mat','wb')
+pickle.dump(embedding_matrix,embed_mat)
+embed_mat.close()
 
-embedding_matrix=np.load('embedding_matrix.npy')
+embed=open('embed_mat','rb')
+emb=pickle.load(embed)
 
 words_list = list(embedding_matrix.keys())
 words_list=np.array(words_list)
