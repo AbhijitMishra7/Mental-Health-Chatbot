@@ -1,4 +1,4 @@
-# Mental-Health-Chatbot
+# Mental HealthCare Application
 
 Link to datasets- <br/>https://www.kaggle.com/narendrageek/mental-health-faq-for-chatbot<br/>
                   https://github.com/nbertagnolli/counsel-chat/tree/master/data
